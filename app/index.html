@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FitBody</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+ 
+   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+    <body ng-controller="MainCtrl" ng-app="fitBodyApp">
+    
+  <header  ng ng-include="'views/header.html'"></header>
+ 
+  <main ng-view></main>
+ 
+  
+    
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/BMIcalculator.js"></script>
+        <script src="scripts/controllers/idealweight.js"></script>
+        <script src="scripts/controllers/caloriecalculator.js"></script>
+        <script src="scripts/controllers/recepies.js"></script>
+        <script src="scripts/controllers/mealplaner.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/singup.js"></script>
+        <script src="scripts/controllers/mangeUser.js"></script>
+        <script src="scripts/toast.js"></script>
+
+        <script src="scripts/services/firebaseuser.js"></script>
+        <script src="scripts/filters/tdtotal.js"></script>
+        <script src="scripts/filters/capitalize.js"></script>
+        <!-- endbuild -->
+     
+
+</body>
+</html>

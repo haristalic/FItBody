@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="row">
+        <!--BMI CALCULATOR-->
+        <div ng-class="{BMIhover: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false"
+            ng-controller="BMIcontroller" class=" calculator card col-sm-12 col-md-4">
+            <h1> BMI Calculator</h1>
+            <p>BMI compares your weight to your height, and is calculated by dividing your weight (in kilograms)
+                by your height (in metres squared). It gives you an idea of whether you’re 'underweight',
+                a 'healthy' weight, 'overweight', or 'obese' for your height. BMI is one type of tool
+                to help health professionals assess the risk for chronic disease. </p>
+
+            <form name="BMIform">
+                <label>Weight:</label><br>
+                <input class="slider" ng-model="weight" type="range" name="weight" min="40"
+                    max="160"><span>{{weight+" kg"}}</span> </br>
+                <label>Height:</label><br>
+                <input class="slider" ng-model="height" type="range" name="height" min="120"
+                    max="220"><span>{{height+" cm"}}</span>
+                    <div class="mt-5" ng-show="BMIform.height.$touched || BMIform.weight.$touched" >
+                <p>Your BMI Index is:<b>{{bmiIndex.toFixed(2) }}</b></p>
+                <p>Your BMI Category is <b>{{bmiC}}</b></p>
+                    </div>
+            </form>
+        </div>
+        <!--IDEAL WEIGHT CALCULATOR-->
+        <div ng-class="{idealWeightHover: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false"
+            ng-controller="idealWeight" class="card calculator col-sm-12 col-md-4">
+            <h1>Ideal Weight Calculator </h1>
+            <p> Do you know what your ideal body weight is for a person of your height and gender?
+                The Ideal Weight Calculator computes ideal bodyweight (IBW)
+                ranges based on height, gender, and age. The idea of finding
+                the IBW using a formula has been sought after by many experts for a long time. </p>
+            <form class="form-group" name='clientForm'>
+                <label>Height:</label><br>
+                <input class="slider" ng-model="height" type="range" name="height" min="120"
+                    max="220"><span>{{height+" cm"}}</span><br>
+                <label>Age:</label><input name='age' required ng-model="age" min='18' max='110' type="number" />
+                <span class='helpAge' ng-show='clientForm.age.$error.required'>Age is required!</span>
+                <span class="errMsgAge" ng-show='clientForm.age.$error.max'>Age should be greater than 110!</span>
+                <span class="errMsgAge" ng-show='clientForm.age.$error.min'>Age should be greater than 18!</span></br>
+
+                <div class="text-center m-1"> <img src="images/bmi-male-loop.gif" alt="Smiley face male" height="60"
+                        width="60">
+                    <img src="images/bmi-female-loop.gif" alt="Smiley face female" height="60" width="60"> <br>
+                    <input type="radio" name="gender" ng-model="gender" ng-value='"male"'> Male
+
+                    <input name="gender" type="radio" ng-model="gender" ng-value='"female"'> Female</div>
+                     <div class="mt-4">
+                <p class="text-center" ng-hide="age<18||age==undifend">Your ideal weight is <b> {{idealWeight.toFixed(0)}} kg</b></p></div>   
+            </form>
+        </div>
+        <!--CALORIE CALCULATOR-->
+        <div ng-class="{calorieHover: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false"
+            ng-controller="CaloriecalculatorCtrl" class=" card  calculator col-sm-12 col-md-4"
+>
+            <h1>Calorie Calculator </h1>
+            <p>The Calorie Calculator can be used to estimate the number of calories a person needs to consume each day.
+                This calculator can also provide some simple guidelines for gaining or losing weight. </p>
+            <form  name='clientForm'>
+                <label>Height:</label><br>
+                <input class="slider" ng-model="height" type="range" name="height" min="120"
+                    max="220"><span>{{height+" cm"}}</span><br>
+                <label>Weight:</label><br>
+                <input class="slider" ng-model="weight" type="range" name="weight" min="40"
+                    max="160"><span>{{weight+" kg"}}</span><br>
+                <label>Age:</label><input name='age' required ng-model="age" min='18' max='110' type="number" />
+                <span class="errMsgAge" ng-show='clientForm.age.$error.max'>Age should not be greater than 110!</span>
+                <span class="errMsgAge" ng-show='clientForm.age.$error.min'>Age should be greater than 18!</span>
+                <span class='helpAge' ng-show='clientForm.age.$error.required'>Age is required!</span> </br>
+<div class="text-center m-1">
+                <img src="images/bmi-male-loop.gif" alt="Smiley face male" height="60" width="60">
+                <img src="images/bmi-female-loop.gif" alt="Smiley face female" height="60" width="60"> <br>
+                <input type="radio" name="genderCal" ng-model="gender" ng-value='"male"'> Male
+
+                <input name="genderCal" type="radio" ng-model="gender" ng-value='"female"'> Female</br>
+</div>
+                <select ng-model="typeOfActivity">
+                    <option value="" selected disabled>- select a activity -</option>
+                    <option value="{{act.value}}" ng-repeat="act in activitys">{{act.activityName}}</option>
+                </select>
+            </form>
+            <div class="mt-4">
+            <p ng-hide="typeOfActivity==null || age<18 || age==undifend ">You need <b>{{calorieResult.toFixed(0)}}</b>
+                calories to maintain your weight.</p></div>
+
+        </div>
+
+    </div>
+</div>

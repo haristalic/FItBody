@@ -1,0 +1,72 @@
+<div  ng-controller="MealplanerCtrl"  class="container">
+ 
+    <section class="mt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <div >
+                <h1 class="display-4">Food Diary</h1>
+                <p class="lead">Nutrition tracking made easy.</p>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+
+   <table id="food-list" ng-hide="data.length===0"  class="table mt-5 table-hover table-light  ">
+    <thead class="thead-dark">
+        <tr>
+            
+            <th>Fodd Name</th>
+            <th>Calories</th>
+            <th>Fat</th>
+            <th>Protein</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr   ng-repeat="cal in data | orderBy : 'calories'">
+           
+            <td>{{cal.label | capitalize }}</td>
+            <td> {{cal.calories.toFixed(0)}} kcal </td>
+            <td> {{cal.fat}} grams </td>
+            <td> {{cal.protein}} grams </td>
+            <td class="remove" ng-click="removeFood(cal);msgRemoveFodd()">x</td>
+            
+        </tr>
+       
+    </tbody>
+</table>
+<div class="mb-5 " ng-hide="data.length===0" >
+<p class="font-weight-bold" >Total calories:{{ (data|total:'calories').toFixed(0)}}</p> 
+<button  class=" btn btn-success" ng-click="doneEating()">Finish Diary</button>
+</div> 
+
+      <input name="food" type="text" class="mt-5 form-control" ng-model="search" ng-model-options="{ debounce: 500 }"
+                 placeholder="Search foods... " autofocus /> 
+<div  ng-hide="advstatus || search.length ===0 || food.$dirty " class="pointer table-responsive-sm" > 
+    
+  <table class="  table-hover table-active">
+    <tbody >
+        <tr  ng-repeat="eachRecipe in recipes.hints  "
+         ng-click="addFood(eachRecipe.food.nutrients.ENERC_KCAL,eachRecipe.food.label,eachRecipe.food.nutrients.PROCNT.toFixed(0),eachRecipe.food.nutrients.FAT.toFixed(0));msgAddFood();
+         addFoodToDataBase();" >
+           
+            <td class="pr-5 ">  {{eachRecipe.food.label}}</td>
+            <td class="pl-5">{{eachRecipe.food.nutrients.ENERC_KCAL.toFixed(0)}} calories </td>
+        </tr>
+       
+    </tbody>
+</table>
+    
+</div>
+    
+
+
+
+   
+  </div>
+ 

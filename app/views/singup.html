@@ -1,0 +1,70 @@
+<div id="home-section" ng-controller="singupCtrl">
+  <div class="dark-overlay">
+    <div class="home-inner ">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 singup d-none d-lg-block">
+            <h1 class="display-4">Eat better Feel better</h1>
+            <div class="d-flex flex-row">
+              <div class="p-4 align-self-start">
+                <i class="fa fa-check"></i>
+              </div>
+              <div class="p-4 align-self-end">
+                Keeping a food diary can help reveal the unhealthy habits that are stopping you from losing weight. 
+              </div>
+            </div>
+
+            <div class="d-flex flex-row">
+              <div class="p-4 align-self-start">
+                <i class="fa fa-check"></i>
+              </div>
+              <div class="p-4 align-self-end">
+                Writing down what you eat and how you feel afterwards can 
+                help you realize what foods your body reacts negatively towards.
+              </div>
+            </div>
+
+            <div class="d-flex flex-row">
+              <div class="p-4 align-self-start">
+                <i class="fa fa-check"></i>
+              </div>
+              <div class="p-4 align-self-end">
+                Before starting your food diary do some research on the proper portion sizes,
+                 then base your meals off of the information you find.
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card bg-primary text-center card-form">
+              <div class="card-body">
+                <h3>Sign Up Today</h3>
+                <p>Please fill out this form to register</p>
+                <form class="mt-5" name="signupFrm">
+
+                  <div class="form-group ">
+                    <input class="form-control form-control-lg" type="email" name="email" placeholder="Email Address"
+                      ng-model="user.email"><br>
+                      <p class="  alert alert-danger"  role="alert"
+                       ng-show="signupFrm.email.$invalid && signupFrm.email.$touched">Enter valid mail</p>
+                  </div>
+                  <div class="form-group ">
+                    <input type="password" class="form-control form-control-lg" name="password" placeholder="Password"
+                      ng-model="user.password" ng-minlength=6 class="form-control" required> <br>
+                    <p class="alert alert-danger"
+                      ng-show="signupFrm.password.$error.minlength && signupFrm.password.$touched">Password with minimum 6
+                      chartesr</p>
+
+                  </div>
+
+                  <input type="submit" ng-disabled="signupFrm.$invalid" ng-click="signUp()"
+                    class="btn btn-outline-light btn-block">
+                    <p class=" my-3 alert alert-danger" ng-show="errMsg">{{errMessage}}</p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

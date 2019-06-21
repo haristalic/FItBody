@@ -1,0 +1,226 @@
+body{
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+.nav-link{
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-left: 1em !important;
+  padding-right: 1em !important;}
+.nav-item.active{
+  border-left: #444 3px solid;
+} 
+ nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+li {
+list-style: none;
+}
+.carousel-item{
+  min-height: 95vh;
+}
+.carousel-image-1{
+  background: url('../../images/meals3.jpg');
+  background-size: cover;
+  
+ opacity: 0.7;
+}
+.carousel-image-2{
+  background: url('../../images/food-crsl.jpg');
+  background-size: cover;
+}
+.carousel-image-3{
+  background: url("../../images/run.jpg");
+  background-size: cover;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  border-radius: 5px;   
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+.calculator{
+  margin-top: 70px;
+}
+.errMsgAge{
+  color:red;
+}
+.helpAge{
+  color: rgb(245, 8, 8);
+}
+.BMIhover {
+  background-color:#dcedc8;
+}
+.idealWeightHover{
+  background-color:#c8e6c9;
+}
+.calorieHover{
+  background-color:#e0f2f1;
+}
+
+.help-block{
+  color: red;
+}
+.carousel-indicators li {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+  text-indent: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #0818ac;
+  box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    
+}
+.carousel-indicators .active {
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+  background-color: #cececa;
+}
+.pointer {
+  cursor: pointer;
+}
+.remove{
+  width: 18px;
+  text-align: center;
+  color: crimson;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.user_card {
+  height: 500px;
+  width: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #f39c12;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+
+}
+.brand_logo_container {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  top: -75px;
+  border-radius: 50%;
+
+  padding: 10px;
+  text-align: center;
+}
+.brand_logo {
+  height: 200px;
+  width: 220px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.form_container {
+  margin-top: 50px;
+}
+.login_btn {
+  width: 100%;
+  background: #c0392b !important;
+  color: white !important;
+}
+.login_btn:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.login_container {
+  padding: 0 2rem;
+}
+.input-group-text {
+  background: #c0392b !important;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.alert{
+  color: red;
+}
+.mt{
+  margin-top: 150px;
+}
+
+
+
+.context h1{
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+}
+
+#home-section{
+  background:url('../images/healthy_foods.jpg') no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+  
+   color:#fff;
+   height: 100vh;
+ }
+
+  .dark-overlay{
+   
+    width:100%;
+    min-height:100vh;
+  }
+.singup{
+  background: rgb(0, 0, 0); 
+  background: rgba(0, 0, 0, 0.7);
+}
+  .home-inner{
+    padding-top:200px;
+  }
+  .fa{
+    color:#008ed6;
+    background:#fff;
+    padding:4px;
+    border-radius:5px;
+   
+  }
+ 
+  main.ng-enter {
+    transition:0.3s linear all;
+    opacity:0;
+  }
+  
+  
+ main.ng-enter.ng-enter-active {
+    opacity:1;
+  }
+
+
